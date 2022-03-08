@@ -279,6 +279,19 @@ APEX_decode(APEX_CPU *cpu)
     }
 }
 
+static void
+APEX_decode_rename(APEX_CPU *cpu)
+{
+    if (cpu->execute.has_insn)
+    {
+       switch (cpu->decode_rename.opcode)
+        {
+            case OPCODE_MOVC:
+            {
+            }
+        }
+    }
+}
 /*
  * Execute Stage of APEX Pipeline
  *
@@ -796,7 +809,15 @@ APEX_cpu_init(const char *filename)
     cpu->pc = 4000;
     memset(cpu->regs, 0, sizeof(int) * REG_FILE_SIZE);
     memset(cpu->data_memory, 0, sizeof(int) * DATA_MEMORY_SIZE);
+    memset(cpu->iq.issue_queue,0,sizeof(issue_queue_entry)*ISSUE_QUEUE_SIZE);
     cpu->single_step = ENABLE_SINGLE_STEP;
+    
+    //Initialization of free physiical registers
+    for (int i=0;i<PHYSICAL_REGISTERS_SIZE;i++){
+        cpu->free_prf_q.free_physical_registers[i]=i;  
+    }
+    cpu->free_prf_q.head=0;
+    cpu->free_prf_q.tail=PHYSICAL_REGISTERS_SIZE-1;
 
     /* Parse input file and create code memory */
     cpu->code_memory = create_code_memory(filename, &cpu->code_memory_size);
@@ -888,4 +909,29 @@ APEX_cpu_stop(APEX_CPU *cpu)
 {
     free(cpu->code_memory);
     free(cpu);
+}
+
+
+void print_prf_q(free_physical_registers_queue *a){
+    int temp_head=a->head;
+    int temp_tail=a->tail;
+    int i=temp_head;
+    while(i!=temp_tail){
+        printf("%d\t,",a->free_physical_registers[i]);
+        i=(i+1)%10;
+    }
+    printf("%d",a->free_physical_registers[temp_tail]);
+    printf("\n");
+}
+
+
+int issue_buffer_available_index(issue_queue_buffer *iq){
+    for(int i=0;i<ISSUE_QUEUE_SIZE;i++){
+        printf("inside\n");
+        if(!iq->issue_queue[i].is_allocated){
+            printf("Issue buffer is free at index %d\n",i);
+            return i;
+        }
+    }
+    return -1;
 }

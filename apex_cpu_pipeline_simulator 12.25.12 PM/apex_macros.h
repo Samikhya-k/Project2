@@ -14,6 +14,13 @@
 
 /* Integers */
 #define DATA_MEMORY_SIZE 4096
+#define PHYSICAL_REGISTERS_SIZE 20
+#define ARCHITECTURAL_REGISTERS_SIZE 16
+#define ISSUE_QUEUE_SIZE 6
+
+#define SOURCE_AR 0
+#define SOURCE_PR 1
+
 
 /* Size of integer register file */
 #define REG_FILE_SIZE 16
