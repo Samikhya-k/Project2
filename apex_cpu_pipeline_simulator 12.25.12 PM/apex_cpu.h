@@ -29,14 +29,23 @@ typedef struct CPU_Stage
     char opcode_str[128];
     int opcode;
     int rs1;
+    int phy_rs1;
+    int phy_rs2;
     int rs2;
     int rd;
+    int phy_rd; //physical register allocated from free physical list  
     int imm;
     int rs1_value;
     int rs2_value;
     int result_buffer;
     int memory_address;
     int has_insn;
+    int is_physical_register_required;
+    int is_src1_register_required;
+    int is_src2_register_required;
+    int is_memory_insn;
+    int is_stage_stalled;
+    int issue_queue_index;
 } CPU_Stage;
 
 ///////////////////PHYSICAL REGISTER /////////////////////////////////
@@ -56,6 +65,7 @@ typedef struct free_physical_registers_queue
     int head;
     int tail;
     int free_physical_registers[PHYSICAL_REGISTERS_SIZE];
+    int is_empty;
 }free_physical_registers_queue;
 
 
@@ -111,8 +121,9 @@ typedef struct APEX_CPU
     
     /* Pipeline stages */
     CPU_Stage fetch;
-    CPU_Stage decode;
     CPU_Stage decode_rename;
+    CPU_Stage rename_dispatch;
+
     CPU_Stage execute;
     CPU_Stage memory;
     CPU_Stage writeback;
@@ -120,6 +131,7 @@ typedef struct APEX_CPU
     free_physical_registers_queue free_prf_q;
     rename_table_mapping rnt;
     issue_queue_buffer iq;
+    physical_register_file prf;
 
 
 
@@ -132,4 +144,5 @@ void APEX_cpu_stop(APEX_CPU *cpu);
 
 void print_prf_q(free_physical_registers_queue *a);
 int issue_buffer_available_index(issue_queue_buffer *iq);
+int pop_free_physical_registers(free_physical_registers_queue *fpq);
 #endif

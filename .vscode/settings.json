@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "apex_macros.h": "c",
+        "apex_cpu.h": "c"
+    }
+}
