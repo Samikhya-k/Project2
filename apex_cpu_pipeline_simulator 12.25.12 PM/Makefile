@@ -10,7 +10,7 @@ COMPILE_DEBUG=@
 VERSION=2.0
 
 # Compile and Link flags, libraries
-CC=$(CROSS_PREFIX)gcc
+CC=gcc
 CFLAGS= -g -Wall -O0 -DVERSION=$(VERSION)
 LDFLAGS=
 LIBS=
@@ -20,7 +20,7 @@ PROGS= apex_sim
 all: clean $(PROGS) 
 
 # Add all object files to be linked in sequence
-APEX_OBJS:=file_parser.o apex_cpu.o main.o
+APEX_OBJS:=physical_register.o issue_queue.o lsq.o rob.o file_parser.o apex_cpu.o main.o
 
 apex_sim: $(APEX_OBJS)
 	$(CC) $(LDFLAGS) -o $@ $^ $(LIBS)

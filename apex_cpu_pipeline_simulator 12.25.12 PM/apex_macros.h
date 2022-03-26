@@ -16,14 +16,21 @@
 #define DATA_MEMORY_SIZE 4096
 #define PHYSICAL_REGISTERS_SIZE 20
 #define ARCHITECTURAL_REGISTERS_SIZE 16
-#define ISSUE_QUEUE_SIZE 6
+#define ISSUE_QUEUE_SIZE 8
+#define LSQ_SIZE 6
+#define ROB_SIZE 16
 
 #define SOURCE_AR 0
 #define SOURCE_PR 1
 
+#define LOAD_INS 0
+#define STORE_INS 1
 
-/* Size of integer register file */
-#define REG_FILE_SIZE 16
+#define ADD_FU 0
+#define MUL_FU 1
+#define MEM_FU 2
+#define BRANCH_FU 3
+
 
 /* Numeric OPCODE identifiers for instructions */
 #define OPCODE_ADD 0x0

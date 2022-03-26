@@ -8,6 +8,7 @@
  */
 
 #include "physical_register.h"
+#include<stdio.h>
 
 
 void print_prf_q(free_physical_registers_queue *a){
@@ -16,13 +17,10 @@ void print_prf_q(free_physical_registers_queue *a){
     int i=temp_head;
     while(i!=temp_tail){
         printf("%d\t,",a->free_physical_registers[i]);
-        i=(i+1)%10;
+        i=(i+1)%PHYSICAL_REGISTERS_SIZE;
     }
-    printf("%d",a->free_physical_registers[temp_tail]);
-    printf("\n");
+    printf("%d\n",a->free_physical_registers[temp_tail]);
 }
-
-
 
 int pop_free_physical_registers(free_physical_registers_queue *fpq){
     if(fpq->is_empty){

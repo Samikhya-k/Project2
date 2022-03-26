@@ -53,6 +53,15 @@ set_opcode_str(const char *opcode_str)
     {
         return OPCODE_SUB;
     }
+    if (strcmp(opcode_str, "ADDL") == 0)
+    {
+        return OPCODE_ADDL;
+    }
+
+    if (strcmp(opcode_str, "SUBL") == 0)
+    {
+        return OPCODE_SUBL;
+    }
 
     if (strcmp(opcode_str, "MUL") == 0)
     {
@@ -108,7 +117,7 @@ set_opcode_str(const char *opcode_str)
     {
         return OPCODE_HALT;
     }
-
+    printf("%s\n", opcode_str);
     assert(0 && "Invalid opcode");
     return 0;
 }
@@ -157,6 +166,8 @@ create_APEX_instruction(APEX_Instruction *ins, char *buffer)
     }
 
     strcpy(ins->opcode_str, top_level_tokens[0]);
+    //remove trailing and end newline
+    ins->opcode_str[strcspn(ins->opcode_str, "\r\n")] = 0;
     ins->opcode = set_opcode_str(ins->opcode_str);
 
     switch (ins->opcode)
