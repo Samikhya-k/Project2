@@ -32,6 +32,8 @@ typedef struct issue_queue_entry
     int dest_tag;
     int lsq_index;
     int rob_index;
+    int counter;
+    int opcode;
 }issue_queue_entry;
 
 typedef struct issue_queue_buffer
@@ -39,7 +41,9 @@ typedef struct issue_queue_buffer
     issue_queue_entry issue_queue[ISSUE_QUEUE_SIZE];
 }issue_queue_buffer;
 
+void iq_entry_addition(issue_queue_buffer *iq,issue_queue_entry *iq_entry,int iq_index);
 int issue_buffer_index_available(issue_queue_buffer *iq);
 void print_iq_indexes(issue_queue_buffer *iq);
 void print_iq_entries(issue_queue_buffer *iq);
+int get_iq_index_fu(issue_queue_buffer *iq, int fu);
 #endif

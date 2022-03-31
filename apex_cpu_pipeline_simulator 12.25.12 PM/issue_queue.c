@@ -64,3 +64,24 @@ void print_iq_entries(issue_queue_buffer *iq){
         }
     }
 }
+
+
+
+
+int get_iq_index_fu(issue_queue_buffer *iq, int fu){
+    int temp_index=-1;
+    int counter=-1;
+    for(int i=0;i<ISSUE_QUEUE_SIZE;i++){
+        if(iq->issue_queue[i].is_allocated ==1 && iq->issue_queue[i].FU==fu){
+            iq->issue_queue[i].counter++;
+            if (iq->issue_queue[i].src2_valid ==1 && iq->issue_queue[i].src1_valid==1)
+            {   
+                if(iq->issue_queue[i].counter>counter){
+                    temp_index=i;
+                }
+            }
+        }
+    }
+    return temp_index;
+}
+

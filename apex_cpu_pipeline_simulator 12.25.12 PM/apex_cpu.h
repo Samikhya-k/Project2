@@ -68,6 +68,8 @@ typedef struct CPU_Stage
     int issue_queue_index;
     int memory_instruction_type;
     int fu;
+    int rob_index;
+    int lsq_index;
 
 
     load_store_queue_entry temp_lsq_entry;
@@ -105,15 +107,24 @@ typedef struct APEX_CPU
     int positive_flag;
     int fetch_from_next_cycle;
 
-    
     /* Pipeline stages */
     CPU_Stage fetch;
     CPU_Stage decode_rename;
     CPU_Stage rename_dispatch;
-    CPU_Stage execute;
-    CPU_Stage memory;
-    CPU_Stage writeback;
+    CPU_Stage queue_entry;
+    CPU_Stage int_fu;
+    CPU_Stage mul1_fu;
+    CPU_Stage mul2_fu;
+    CPU_Stage mul3_fu;
+    CPU_Stage mul4_fu;
 
+    CPU_Stage branch_fu;
+    CPU_Stage memory;
+    CPU_Stage add_fwd;
+    CPU_Stage mul_fwd;
+    CPU_Stage memory_fwd;
+    CPU_Stage writeback;
+    
     physical_register_file prf;
     archictectural_register_file arf;
     free_physical_registers_queue free_prf_q;
@@ -129,5 +140,5 @@ APEX_Instruction *create_code_memory(const char *filename, int *size);
 APEX_CPU *APEX_cpu_init(const char *filename);
 void APEX_cpu_run(APEX_CPU *cpu);
 void APEX_cpu_stop(APEX_CPU *cpu);
-
+void push_information_to_fu(APEX_CPU *cpu, int index, int fu);
 #endif

@@ -26,10 +26,10 @@
 #define LOAD_INS 0
 #define STORE_INS 1
 
-#define ADD_FU 0
+#define INT_FU 0
 #define MUL_FU 1
-#define MEM_FU 2
-#define BRANCH_FU 3
+#define BRANCH_FU 2
+#define MEM_FU 3
 
 
 /* Numeric OPCODE identifiers for instructions */

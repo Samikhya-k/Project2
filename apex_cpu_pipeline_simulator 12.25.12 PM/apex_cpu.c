@@ -224,7 +224,7 @@ APEX_decode_rename(APEX_CPU *cpu)
                 cpu->decode_rename.is_physical_register_required=1;
                 cpu->decode_rename.is_src1_register_required=1;
                 cpu->decode_rename.is_src2_register_required=1;
-                cpu->decode_rename.fu=ADD_FU;      
+                cpu->decode_rename.fu=INT_FU;      
                 if(cpu->decode_rename.opcode==OPCODE_MUL || cpu->decode_rename.opcode==OPCODE_DIV){
                     cpu->decode_rename.fu=MUL_FU;      
                 }
@@ -235,14 +235,14 @@ APEX_decode_rename(APEX_CPU *cpu)
             {
                 cpu->decode_rename.is_physical_register_required=1;
                 cpu->decode_rename.is_src1_register_required=1;  
-                cpu->decode_rename.fu=ADD_FU;        
+                cpu->decode_rename.fu=INT_FU;        
                 break;
             }
             case OPCODE_SUBL:
             {
                 cpu->decode_rename.is_physical_register_required=1;
                 cpu->decode_rename.is_src1_register_required=1;
-                cpu->decode_rename.fu=ADD_FU;
+                cpu->decode_rename.fu=INT_FU;
                 break;
             }
 
@@ -251,7 +251,7 @@ APEX_decode_rename(APEX_CPU *cpu)
                 cpu->decode_rename.is_physical_register_required=1;
                 cpu->decode_rename.is_src1_register_required=1;
                 cpu->decode_rename.is_memory_insn=1;
-                cpu->decode_rename.fu=ADD_FU;
+                cpu->decode_rename.fu=INT_FU;
                 cpu->decode_rename.memory_instruction_type=LOAD_INS;
                 break;
             }
@@ -260,7 +260,7 @@ APEX_decode_rename(APEX_CPU *cpu)
                 cpu->decode_rename.is_src1_register_required=1;
                 cpu->decode_rename.is_src2_register_required=1;
                 cpu->decode_rename.is_memory_insn=1;
-                cpu->decode_rename.fu=ADD_FU;
+                cpu->decode_rename.fu=INT_FU;
                 cpu->decode_rename.memory_instruction_type=STORE_INS;
                 break;
             }
@@ -287,7 +287,7 @@ APEX_decode_rename(APEX_CPU *cpu)
             case OPCODE_MOVC:
             {
                 cpu->decode_rename.is_physical_register_required=1;
-                cpu->decode_rename.fu=ADD_FU;
+                cpu->decode_rename.fu=INT_FU;
 
                 break;
             }
@@ -404,6 +404,7 @@ APEX_rename_dispatch(APEX_CPU *cpu)
             cpu->rename_dispatch.temp_iq_entry.is_allocated=1;
             cpu->rename_dispatch.temp_iq_entry.rob_index=temp_rob_index;
             cpu->rename_dispatch.temp_iq_entry.lsq_index=temp_lsq_index;
+            cpu->rename_dispatch.issue_queue_index=temp_iq_index;
             if(temp_lsq_index!=100 && temp_lsq_index != -1){
                 cpu->rename_dispatch.temp_lsq_entry.allocate=1;
                 cpu->rename_dispatch.temp_lsq_entry.instruction_type=cpu->rename_dispatch.memory_instruction_type;
@@ -427,88 +428,26 @@ APEX_rename_dispatch(APEX_CPU *cpu)
             print_stage_content("Rename_Dispatch", &cpu->rename_dispatch);
         }
     }
+    cpu->queue_entry=cpu->rename_dispatch;
 }
-/*
- * Execute Stage of APEX Pipeline
- *
- * Note: You are free to edit this function according to your implementation
- */
-/*
- * Memory Stage of APEX Pipeline
- *
- * Note: You are free to edit this function according to your implementation
- */
-/*
- * Writeback Stage of APEX Pipeline
- *
- * Note: You are free to edit this function according to your implementation
- */
-// #ifdef 0
-// static int
-// APEX_writeback(APEX_CPU *cpu)
-// {
-//     if (cpu->writeback.has_insn)
-//     {
-//         /* Write result to register file based on instruction type */
-//         switch (cpu->writeback.opcode)
-//         {
-//             case OPCODE_ADD:
-//             case OPCODE_SUB:
-//             case OPCODE_MUL:
-//             case OPCODE_DIV:
-//             case OPCODE_AND:
-//             case OPCODE_OR:
-//             case OPCODE_XOR:
-//             case OPCODE_ADDL:
-//             case OPCODE_SUBL:
-//             case OPCODE_JALR:
-//             {
-//                 cpu->regs[cpu->writeback.rd] = cpu->writeback.result_buffer;
-//                 break;
-//             }
 
-//             case OPCODE_LOAD:
-//             {
-//                 cpu->regs[cpu->writeback.rd] = cpu->writeback.result_buffer;
-//                 break;
-//             }
-//             case OPCODE_STORE:
-//             {
-//                 cpu->regs[cpu->writeback.rs1] = cpu->writeback.result_buffer;
-//                 break;
-//             }
-//             case OPCODE_MOVC: 
-//             {
-//                 cpu->regs[cpu->writeback.rd] = cpu->writeback.result_buffer;
-//                 break;
-//             }
-//         }
 
-//         cpu->insn_completed++;
-//         cpu->writeback.has_insn = FALSE;
+static void APEX_queue_entry(APEX_CPU *cpu)
+{
+    if(cpu->queue_entry.has_insn)
+    {
+        reorder_buffer_entry_addition_to_queue(&cpu->rob,&cpu->queue_entry.temp_rob_entry);
+        if(cpu->queue_entry.is_memory_insn){
+            lsq_entry_addition_to_queue(&cpu->lsq,&cpu->queue_entry.temp_lsq_entry);
+        }
+        iq_entry_addition(&cpu->iq,&cpu->queue_entry.temp_iq_entry,cpu->queue_entry.issue_queue_index);
+    }
+}
 
-//         if (ENABLE_DEBUG_MESSAGES)
-//         {
-//             print_stage_content("Writeback", &cpu->writeback);
-//         }
 
-//         if (cpu->writeback.opcode == OPCODE_HALT)
-//         {
-//             /* Stop the APEX simulator */
-//             return TRUE;
-//         }
-//     }
 
-//     /* Default */
-//     return 0;
-// }
 
-// #endif
-/*
- * This function creates and initializes APEX cpu.
- *
- * Note: You are free to edit this function according to your implementation
- */
+
 APEX_CPU *APEX_cpu_init(const char *filename)
 {
     int i;
@@ -610,6 +549,7 @@ APEX_cpu_run(APEX_CPU *cpu)
 
         if (cpu->clock==10)
             break;
+        APEX_queue_entry(cpu);
         APEX_rename_dispatch(cpu);
         APEX_decode_rename(cpu);
         APEX_fetch(cpu);
@@ -643,4 +583,149 @@ APEX_cpu_stop(APEX_CPU *cpu)
     free(cpu->code_memory);
     free(cpu);
 }
+//identify iq index and push information 
+void APEX_process_iq(APEX_CPU *cpu){
+    int int_iq_index = get_iq_index_fu(&cpu->iq, 0);//0 for add
+    int mul_iq_index = get_iq_index_fu(&cpu->iq, 1);//1  for mul
+    int bu_iq_index  = get_iq_index_fu(&cpu->iq, 2);//2 for mem
+    if(int_iq_index>0){
+        push_information_to_fu(cpu, int_iq_index, 0);
+    }
+    else if(mul_iq_index>0){
+        push_information_to_fu(cpu, mul_iq_index, 1);
+    }
+    else if(bu_iq_index>0){
+        push_information_to_fu(cpu, bu_iq_index, 2);
+    }
+}
 
+
+void push_information_to_fu(APEX_CPU *cpu, int index, int fu){
+    switch (fu)
+    {
+    //addition fu
+    case INT_FU:
+        cpu->int_fu.rs1_value=cpu->iq.issue_queue[index].src1_value;
+        cpu->int_fu.rs2_value=cpu->iq.issue_queue[index].src2_value;
+        cpu->int_fu.phy_rd=cpu->iq.issue_queue[index].dest_tag;
+        cpu->int_fu.rob_index=cpu->iq.issue_queue[index].rob_index;
+        cpu->int_fu.lsq_index=cpu->iq.issue_queue[index].rob_index;
+        cpu->int_fu.opcode=cpu->iq.issue_queue[index].opcode;
+        cpu->int_fu.has_insn=1;
+        break;
+    //multiplication fu
+    case MUL_FU:
+        cpu->mul1_fu.rs1_value=cpu->iq.issue_queue[index].src1_value;
+        cpu->mul1_fu.rs2_value=cpu->iq.issue_queue[index].src2_value;
+        cpu->mul1_fu.phy_rd=cpu->iq.issue_queue[index].dest_tag;
+        cpu->mul1_fu.rob_index=cpu->iq.issue_queue[index].rob_index;
+        cpu->mul1_fu.lsq_index=cpu->iq.issue_queue[index].lsq_index;
+        cpu->mul1_fu.opcode=cpu->iq.issue_queue[index].opcode;
+        cpu->mul1_fu.has_insn=1;
+        break;
+    //branch fu
+    case BRANCH_FU:
+        cpu->branch_fu.rs1_value=cpu->iq.issue_queue[index].src1_value;
+        cpu->branch_fu.rs2_value=cpu->iq.issue_queue[index].src2_value;
+        cpu->branch_fu.phy_rd=cpu->iq.issue_queue[index].dest_tag;
+        cpu->branch_fu.rob_index=cpu->iq.issue_queue[index].rob_index;
+        cpu->branch_fu.lsq_index=cpu->iq.issue_queue[index].lsq_index;
+        cpu->branch_fu.opcode=cpu->iq.issue_queue[index].opcode;
+        cpu->branch_fu.has_insn=1;
+        break;
+    default:
+        break;
+    }
+}
+
+
+void APEX_int_fu(APEX_CPU *cpu){
+    if(cpu->int_fu.has_insn){
+        switch (cpu->int_fu.opcode)
+        {
+        case OPCODE_ADD:
+            cpu->int_fu.result_buffer=cpu->int_fu.rs1_value+cpu->int_fu.rs2_value;
+            break;
+        case OPCODE_ADDL:
+            cpu->int_fu.result_buffer=cpu->int_fu.rs1_value+cpu->int_fu.imm;
+            break;
+        case OPCODE_SUB:
+            cpu->int_fu.result_buffer=cpu->int_fu.rs1_value-cpu->int_fu.rs2_value;
+            break;
+        case OPCODE_SUBL:
+            cpu->int_fu.result_buffer=cpu->int_fu.rs1_value-cpu->int_fu.imm;
+            break; 
+        case OPCODE_AND:
+            cpu->int_fu.result_buffer=cpu->int_fu.rs1_value & cpu->int_fu.rs2_value;
+            break;
+        case OPCODE_OR:
+            cpu->int_fu.result_buffer=cpu->int_fu.rs1_value | cpu->int_fu.rs2_value;
+            break;
+        case OPCODE_XOR:
+            cpu->int_fu.result_buffer=cpu->int_fu.rs1_value ^ cpu->int_fu.rs2_value;
+            break;   
+        case OPCODE_MOVC:
+            cpu->int_fu.result_buffer=cpu->int_fu.rs1_value ;
+            break; 
+        default:
+            break;
+        }
+        cpu->add_fwd=cpu->int_fu;
+        cpu->int_fu.has_insn=FALSE;
+    }
+}
+
+void APEX_mul_fu_1(APEX_CPU *cpu){
+    if(cpu->mul1_fu.has_insn){
+        cpu->mul2_fu=cpu->mul1_fu;
+        cpu->mul1_fu.has_insn=FALSE;
+    }
+}
+
+void APEX_mul_fu_2(APEX_CPU *cpu){
+    if(cpu->mul2_fu.has_insn){
+        cpu->mul3_fu=cpu->mul2_fu;
+        cpu->mul2_fu.has_insn=FALSE;
+    }
+}
+
+void APEX_mul_fu_3(APEX_CPU *cpu){
+    if(cpu->mul3_fu.has_insn){
+        cpu->mul4_fu=cpu->mul3_fu;
+        cpu->mul3_fu.has_insn=FALSE;
+    }
+}
+
+
+void APEX_mul_fu_4(APEX_CPU *cpu){
+    if(cpu->mul4_fu.has_insn){
+        if(cpu->mul4_fu.opcode==OPCODE_MUL)
+            cpu->mul4_fu.result_buffer=cpu->mul4_fu.rs1_value*cpu->mul4_fu.rs1_value;
+        else
+            cpu->mul4_fu.result_buffer=cpu->mul4_fu.rs1_value/cpu->mul4_fu.rs1_value;
+        cpu->mul_fwd=cpu->mul4_fu;
+        cpu->mul3_fu.has_insn=FALSE;
+    }
+}
+
+
+void push_lsq_instruction_to_memory_fu(APEX_CPU *cpu){
+    int temp_head= cpu->lsq.head;
+    load_store_queue lsq=cpu->lsq;
+    if (lsq->load_store_queue[lsq->head].allocate==1 && lsq->load_store_queue[lsq->head].address_valid==1){
+        //if instruction is load =0
+        if(lsq->load_store_queue[lsq->head].instruction_type==0){
+            if(lsq->load_store_queue[lsq->head].address_valid==1){
+                //push instruction to memory function 
+                if(cpu->memory.is_stage_stalled==0){
+                    cpu->memory.has_insn=TRUE;
+                    cpu->memory.memory_address=lsq.load_store_queue[lsq.head].mem_address;
+                    cpu->memory.memory_instruction_type=0;
+                    cpu->memory.opcode=OPCODE_LOAD;
+                    cpu->memory.phy_rd=lsq.load_store_queue[lsq.head].destination_address_for_load;
+                }
+
+            }
+        }
+    }
+}
