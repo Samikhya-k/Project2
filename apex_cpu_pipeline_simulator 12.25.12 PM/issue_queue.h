@@ -34,6 +34,7 @@ typedef struct issue_queue_entry
     int rob_index;
     int counter;
     int opcode;
+    int pc_value;
 }issue_queue_entry;
 
 typedef struct issue_queue_buffer

@@ -32,7 +32,9 @@ void iq_entry_addition(issue_queue_buffer *iq,issue_queue_entry *iq_entry,int iq
     iq->issue_queue[iq_index].src2_value=iq_entry->src2_value;
     iq->issue_queue[iq_index].lsq_index=iq_entry->lsq_index;
     iq->issue_queue[iq_index].rob_index=iq_entry->rob_index;
+    iq->issue_queue[iq_index].pc_value=iq_entry->pc_value;
 }
+
 
 void print_iq_indexes(issue_queue_buffer *iq){
     issue_queue_entry *temp_iq= iq->issue_queue;
@@ -47,7 +49,8 @@ void print_iq_indexes(issue_queue_buffer *iq){
 
 void print_iq_entries(issue_queue_buffer *iq){
     issue_queue_entry *temp_iq= iq->issue_queue;
-    printf("contents are as below:");
+    printf("************************\n");
+    printf("IQ contents are as below \n:");
     for(int i=0;i<ISSUE_QUEUE_SIZE;i++){
         //print content of iq
         if(temp_iq[i].is_allocated){
@@ -63,6 +66,7 @@ void print_iq_entries(issue_queue_buffer *iq){
             printf("dest_tag:%d\n",temp_iq[i].dest_tag);
         }
     }
+    printf("************************\n");
 }
 
 

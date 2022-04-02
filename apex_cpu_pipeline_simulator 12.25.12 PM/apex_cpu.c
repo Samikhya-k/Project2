@@ -307,7 +307,8 @@ APEX_decode_rename(APEX_CPU *cpu)
             else  //setting the stalling variable to 1 if no free physical register available
                 cpu->decode_rename.is_stage_stalled=1;
         }
-
+        cpu->decode_rename.rs1_ready=1;
+        cpu->decode_rename.rs2_ready=1;
         if(cpu->decode_rename.is_src1_register_required){
             int temp_physcial_src1=100;
             //if need to reaad the content from physical register
@@ -404,16 +405,18 @@ APEX_rename_dispatch(APEX_CPU *cpu)
             cpu->rename_dispatch.temp_iq_entry.is_allocated=1;
             cpu->rename_dispatch.temp_iq_entry.rob_index=temp_rob_index;
             cpu->rename_dispatch.temp_iq_entry.lsq_index=temp_lsq_index;
-            cpu->rename_dispatch.issue_queue_index=temp_iq_index;
+            cpu->rename_dispatch.temp_iq_entry.pc_value=cpu->rename_dispatch.pc;
+
             if(temp_lsq_index!=100 && temp_lsq_index != -1){
                 cpu->rename_dispatch.temp_lsq_entry.allocate=1;
                 cpu->rename_dispatch.temp_lsq_entry.instruction_type=cpu->rename_dispatch.memory_instruction_type;
                 cpu->rename_dispatch.temp_lsq_entry.address_valid=0;
                 cpu->rename_dispatch.temp_lsq_entry.data_ready=0;
+                cpu->rename_dispatch.temp_lsq_entry.OPCODE=cpu->rename_dispatch.opcode;
             }
             cpu->rename_dispatch.temp_rob_entry.insn_type=cpu->rename_dispatch.fu;
             //check the pc value later
-            cpu->rename_dispatch.temp_rob_entry.pc_value=cpu->pc;
+            cpu->rename_dispatch.temp_rob_entry.pc_value=cpu->rename_dispatch.pc;
             cpu->rename_dispatch.temp_rob_entry.destination_address=cpu->rename_dispatch.rd;
             cpu->rename_dispatch.temp_rob_entry.status_bit=0;
             cpu->rename_dispatch.temp_rob_entry.store_value_valid=0;
@@ -432,16 +435,27 @@ APEX_rename_dispatch(APEX_CPU *cpu)
 }
 
 
-static void APEX_queue_entry(APEX_CPU *cpu)
+static void APEX_queue_entry_addition(APEX_CPU *cpu)
 {
+    int rob_index,lsq_index;
+    lsq_index=100;
     if(cpu->queue_entry.has_insn)
     {
-        reorder_buffer_entry_addition_to_queue(&cpu->rob,&cpu->queue_entry.temp_rob_entry);
+        rob_index= reorder_buffer_entry_addition_to_queue(&cpu->rob,&cpu->queue_entry.temp_rob_entry);
         if(cpu->queue_entry.is_memory_insn){
-            lsq_entry_addition_to_queue(&cpu->lsq,&cpu->queue_entry.temp_lsq_entry);
+            cpu->queue_entry.temp_lsq_entry.rob_index=rob_index;
+            lsq_index=lsq_entry_addition_to_queue(&cpu->lsq,&cpu->queue_entry.temp_lsq_entry);
+            print_lsq_entries(&cpu->lsq);
         }
+        cpu->queue_entry.temp_iq_entry.rob_index=rob_index;
+        cpu->queue_entry.temp_iq_entry.lsq_index=lsq_index;
         iq_entry_addition(&cpu->iq,&cpu->queue_entry.temp_iq_entry,cpu->queue_entry.issue_queue_index);
+
+        print_iq_entries(&cpu->iq);
+        print_rob_entries(&cpu->rob);
     }
+    
+
 }
 
 
@@ -549,7 +563,19 @@ APEX_cpu_run(APEX_CPU *cpu)
 
         if (cpu->clock==10)
             break;
-        APEX_queue_entry(cpu);
+        
+
+
+        APEX_process_iq(cpu);
+        APEX_mul_fu_4(cpu);
+        APEX_mul_fu_3(cpu);
+        APEX_mul_fu_2(cpu);
+        APEX_mul_fu_1(cpu);
+        APEX_memory(cpu);
+        APEX_int_fu(cpu);
+        //need to add branch funcytion unit here
+
+        APEX_queue_entry_addition(cpu);
         APEX_rename_dispatch(cpu);
         APEX_decode_rename(cpu);
         APEX_fetch(cpu);
@@ -614,6 +640,7 @@ void push_information_to_fu(APEX_CPU *cpu, int index, int fu){
         cpu->int_fu.lsq_index=cpu->iq.issue_queue[index].rob_index;
         cpu->int_fu.opcode=cpu->iq.issue_queue[index].opcode;
         cpu->int_fu.has_insn=1;
+        cpu->iq.issue_queue[index].is_allocated=0;
         break;
     //multiplication fu
     case MUL_FU:
@@ -624,6 +651,7 @@ void push_information_to_fu(APEX_CPU *cpu, int index, int fu){
         cpu->mul1_fu.lsq_index=cpu->iq.issue_queue[index].lsq_index;
         cpu->mul1_fu.opcode=cpu->iq.issue_queue[index].opcode;
         cpu->mul1_fu.has_insn=1;
+        cpu->iq.issue_queue[index].is_allocated=0;
         break;
     //branch fu
     case BRANCH_FU:
@@ -634,6 +662,7 @@ void push_information_to_fu(APEX_CPU *cpu, int index, int fu){
         cpu->branch_fu.lsq_index=cpu->iq.issue_queue[index].lsq_index;
         cpu->branch_fu.opcode=cpu->iq.issue_queue[index].opcode;
         cpu->branch_fu.has_insn=1;
+        cpu->iq.issue_queue[index].is_allocated=0;
         break;
     default:
         break;

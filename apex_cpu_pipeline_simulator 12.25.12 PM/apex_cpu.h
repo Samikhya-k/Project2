@@ -142,4 +142,14 @@ APEX_CPU *APEX_cpu_init(const char *filename);
 void APEX_cpu_run(APEX_CPU *cpu);
 void APEX_cpu_stop(APEX_CPU *cpu);
 void push_information_to_fu(APEX_CPU *cpu, int index, int fu);
+
+
+void APEX_memory(APEX_CPU *cpu);
+void APEX_int_fu(APEX_CPU *cpu);
+void APEX_mul_fu_1(APEX_CPU *cpu);
+void APEX_mul_fu_2(APEX_CPU *cpu);
+void APEX_mul_fu_3(APEX_CPU *cpu);
+void APEX_mul_fu_4(APEX_CPU *cpu);
+void APEX_process_iq(APEX_CPU *cpu);
 #endif
+

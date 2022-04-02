@@ -42,6 +42,6 @@ typedef struct reorder_buffer
 }reorder_buffer;
 
 int reorder_buffer_available(reorder_buffer *rob);
-void reorder_buffer_entry_addition_to_queue(reorder_buffer *rob, reorder_buffer_entry * rob_entry);
+int reorder_buffer_entry_addition_to_queue(reorder_buffer *rob, reorder_buffer_entry * rob_entry);
 void print_rob_entries(reorder_buffer *rob);
 #endif

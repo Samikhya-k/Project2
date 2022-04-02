@@ -26,6 +26,8 @@ typedef struct load_store_queue_entry
     int src1_store;
     int value_to_be_stored;
     int rob_index;
+    int OPCODE;
+    int pc_vale;
 }load_store_queue_entry;
 
 typedef struct load_store_queue
@@ -37,6 +39,6 @@ typedef struct load_store_queue
 }load_store_queue;
 
 int lsq_index_available(load_store_queue *lsq);
-void lsq_entry_addition_to_queue(load_store_queue *lsq, load_store_queue_entry * lsq_entry);
+int lsq_entry_addition_to_queue(load_store_queue *lsq, load_store_queue_entry * lsq_entry);
 void print_lsq_entries(load_store_queue *lsq);
 #endif
