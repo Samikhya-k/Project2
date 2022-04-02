@@ -600,6 +600,8 @@ void APEX_process_iq(APEX_CPU *cpu){
 }
 
 
+
+
 void push_information_to_fu(APEX_CPU *cpu, int index, int fu){
     switch (fu)
     {
@@ -709,13 +711,39 @@ void APEX_mul_fu_4(APEX_CPU *cpu){
 }
 
 
+void APEX_memory(APEX_CPU *cpu){
+    if(cpu->memory.has_insn){
+        //for load operation
+        if(cpu->memory.cycles==0){
+            cpu->memory.cycles++;
+            cpu->memory.is_stage_stalled=1;
+        }
+        else if(cpu->memory.cycles==1){
+            if(cpu->memory.opcode==OPCODE_LOAD)
+            {
+                cpu->memory.result_buffer=cpu->data_memory[cpu->memory.memory_address];
+                cpu->memory.cycles=0;
+                cpu->memory_fwd=cpu->memory;
+                cpu->memory.has_insn=FALSE;
+                cpu->memory.is_stage_stalled=0;
+            }
+            else if(cpu->memory.opcode==OPCODE_STORE)
+            {
+                cpu->data_memory[cpu->memory.memory_address]=cpu->memory.rs1_value;
+                cpu->memory.cycles=0;
+                cpu->memory.has_insn=FALSE;
+                cpu->memory.is_stage_stalled=0;
+            }
+        }
+    }
+}
+
 void push_lsq_instruction_to_memory_fu(APEX_CPU *cpu){
-    int temp_head= cpu->lsq.head;
     load_store_queue lsq=cpu->lsq;
-    if (lsq->load_store_queue[lsq->head].allocate==1 && lsq->load_store_queue[lsq->head].address_valid==1){
+    if (lsq.load_store_queue[lsq.head].allocate==1 && lsq.load_store_queue[lsq.head].address_valid==1){
         //if instruction is load =0
-        if(lsq->load_store_queue[lsq->head].instruction_type==0){
-            if(lsq->load_store_queue[lsq->head].address_valid==1){
+        if(lsq.load_store_queue[lsq.head].instruction_type==0){
+            if(lsq.load_store_queue[lsq.head].address_valid==1){
                 //push instruction to memory function 
                 if(cpu->memory.is_stage_stalled==0){
                     cpu->memory.has_insn=TRUE;
@@ -724,7 +752,22 @@ void push_lsq_instruction_to_memory_fu(APEX_CPU *cpu){
                     cpu->memory.opcode=OPCODE_LOAD;
                     cpu->memory.phy_rd=lsq.load_store_queue[lsq.head].destination_address_for_load;
                 }
-
+            }
+        }
+        //if instruction is store =1
+        if(lsq.load_store_queue[lsq.head].instruction_type==1){
+            if(lsq.load_store_queue[lsq.head].address_valid==1  &&
+                lsq.load_store_queue[lsq.head].data_ready ==1 &&
+                lsq.load_store_queue[lsq.head].rob_index == cpu->rob.head){
+                 if(cpu->memory.is_stage_stalled==0){
+                    cpu->memory.has_insn=TRUE;
+                    cpu->memory.memory_address=lsq.load_store_queue[lsq.head].mem_address;
+                    cpu->memory.memory_instruction_type=1;
+                    cpu->memory.opcode=OPCODE_STORE;
+                    //either need to read from physical or architectural register
+                    cpu->memory.phy_rs1=lsq.load_store_queue[lsq.head].src1_store;
+                    cpu->memory.rs1_value=lsq.load_store_queue[lsq.head].value_to_be_stored;
+                }
             }
         }
     }

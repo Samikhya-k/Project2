@@ -25,6 +25,7 @@ typedef struct load_store_queue_entry
     int data_ready;
     int src1_store;
     int value_to_be_stored;
+    int rob_index;
 }load_store_queue_entry;
 
 typedef struct load_store_queue

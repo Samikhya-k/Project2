@@ -70,6 +70,7 @@ typedef struct CPU_Stage
     int fu;
     int rob_index;
     int lsq_index;
+    int cycles;
 
 
     load_store_queue_entry temp_lsq_entry;
@@ -124,7 +125,7 @@ typedef struct APEX_CPU
     CPU_Stage mul_fwd;
     CPU_Stage memory_fwd;
     CPU_Stage writeback;
-    
+
     physical_register_file prf;
     archictectural_register_file arf;
     free_physical_registers_queue free_prf_q;
