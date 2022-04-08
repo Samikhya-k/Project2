@@ -118,10 +118,11 @@ typedef struct APEX_CPU
     CPU_Stage mul2_fu;
     CPU_Stage mul3_fu;
     CPU_Stage mul4_fu;
-
+    CPU_Stage process_iq;
+    CPU_Stage phy_writeback;
     CPU_Stage branch_fu;
     CPU_Stage memory;
-    CPU_Stage add_fwd;
+    CPU_Stage int_fwd;
     CPU_Stage mul_fwd;
     CPU_Stage memory_fwd;
     CPU_Stage writeback;

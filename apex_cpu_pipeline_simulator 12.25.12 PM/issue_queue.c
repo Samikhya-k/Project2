@@ -12,7 +12,7 @@
 
 int issue_buffer_index_available(issue_queue_buffer *iq){
      for(int i=0;i<ISSUE_QUEUE_SIZE;i++){
-        if(iq->issue_queue->is_allocated==0){
+        if(iq->issue_queue[i].is_allocated==0){
             return i;
         }
     }
@@ -33,6 +33,8 @@ void iq_entry_addition(issue_queue_buffer *iq,issue_queue_entry *iq_entry,int iq
     iq->issue_queue[iq_index].lsq_index=iq_entry->lsq_index;
     iq->issue_queue[iq_index].rob_index=iq_entry->rob_index;
     iq->issue_queue[iq_index].pc_value=iq_entry->pc_value;
+    iq->issue_queue[iq_index].counter=iq_entry->counter;
+    iq->issue_queue[iq_index].opcode=iq_entry->opcode;
 }
 
 
@@ -49,12 +51,20 @@ void print_iq_indexes(issue_queue_buffer *iq){
 
 void print_iq_entries(issue_queue_buffer *iq){
     issue_queue_entry *temp_iq= iq->issue_queue;
+    int count=0;
     printf("************************\n");
+    for(int i=0;i<ISSUE_QUEUE_SIZE;i++){
+        if(temp_iq[i].is_allocated){
+            count=count+1;;
+        }
+    }
+    printf("No.of issue queue entries:%d",count);
     printf("IQ contents are as below \n:");
     for(int i=0;i<ISSUE_QUEUE_SIZE;i++){
         //print content of iq
         if(temp_iq[i].is_allocated){
             printf("index:%d\t |",i);
+            printf("allocate:%d\t |",temp_iq[i].is_allocated);
             printf("FU:%d\t |",temp_iq[i].FU);
             printf("src1_tag:%d\t |",temp_iq[i].src1_tag);
             printf("src1_value:%d\t |",temp_iq[i].src1_value);
@@ -64,6 +74,7 @@ void print_iq_entries(issue_queue_buffer *iq){
             printf("src2_valid:%d\t |",temp_iq[i].src2_valid);
             printf("immediate_literal:%d\t|",temp_iq[i].immediate_literal);
             printf("dest_tag:%d\n",temp_iq[i].dest_tag);
+            printf("counter:%d\n",temp_iq[i].counter);
         }
     }
     printf("************************\n");
@@ -73,19 +84,23 @@ void print_iq_entries(issue_queue_buffer *iq){
 
 
 int get_iq_index_fu(issue_queue_buffer *iq, int fu){
+    printf("finding index");
     int temp_index=-1;
     int counter=-1;
     for(int i=0;i<ISSUE_QUEUE_SIZE;i++){
         if(iq->issue_queue[i].is_allocated ==1 && iq->issue_queue[i].FU==fu){
+            printf("%d",i);
             iq->issue_queue[i].counter++;
             if (iq->issue_queue[i].src2_valid ==1 && iq->issue_queue[i].src1_valid==1)
             {   
                 if(iq->issue_queue[i].counter>counter){
                     temp_index=i;
+                    counter=iq->issue_queue[i].counter;
                 }
             }
         }
     }
+    printf("%d",temp_index);
     return temp_index;
 }
 
