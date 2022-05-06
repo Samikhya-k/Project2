@@ -22,12 +22,13 @@ typedef struct load_store_queue_entry
     int allocate;
     int instruction_type;
     int destination_address_for_load;
+    int phy_destination_address_for_load;
     int data_ready;
     int src1_store;
     int value_to_be_stored;
     int rob_index;
     int OPCODE;
-    int pc_vale;
+    int pc_value;
 }load_store_queue_entry;
 
 typedef struct load_store_queue

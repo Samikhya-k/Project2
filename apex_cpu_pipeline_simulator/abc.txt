@@ -1,0 +1,1913 @@
+opcode_str rd        rs1       rs2       imm      
+MOVC      1         0         0         10       
+MOVC      5         0         0         45       
+MOVC      10        0         0         230      
+ADD       6         10        5         0        
+MOVC      13        0         0         20       
+SUB       12        10        6         0        
+SUBL      12        6         0         10       
+STORE     0         6         1         22       
+LOAD      14        13        0         12       
+MOVC      0         0         0         12       
+MOVC      8         0         0         22       
+STORE     0         13        13        10       
+MUL       10        0         8         0        
+AND       1         10        14        0        
+EXOR      10        12        13        0        
+LOAD      6         13        0         12       
+MOVC      12        0         0         10       
+AND       8         6         5         0        
+SUB       6         0         14        0        
+--------------------------------------------
+Clock Cycle #: 1
+--------------------------------------------
+Fetch          : I[0] 
+has isn: 1
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [0  ] R1  [0  ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [0  ] R6  [0  ] R7  [0  ] 
+R8  [0  ] R9  [0  ] R10 [0  ] R11 [0  ] R12 [0  ] R13 [0  ] R14 [0  ] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [0  ] P1  [0  ] P2  [0  ] P3  [0  ] P4  [0  ] P5  [0  ] P6  [0  ] P7  [0  ] P8  [0  ] P9  [0  ] 
+P10 [0  ] P11 [0  ] P12 [0  ] P13 [0  ] P14 [0  ] P15 [0  ] P16 [0  ] P17 [0  ] P18 [0  ] P19 [0  ] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 2
+--------------------------------------------
+Decode_Rename  : I[0] 
+Fetch          : I[1] 
+has isn: 1
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [0  ] R1  [0  ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [0  ] R6  [0  ] R7  [0  ] 
+R8  [0  ] R9  [0  ] R10 [0  ] R11 [0  ] R12 [0  ] R13 [0  ] R14 [0  ] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [0  ] P1  [0  ] P2  [0  ] P3  [0  ] P4  [0  ] P5  [0  ] P6  [0  ] P7  [0  ] P8  [0  ] P9  [0  ] 
+P10 [0  ] P11 [0  ] P12 [0  ] P13 [0  ] P14 [0  ] P15 [0  ] P16 [0  ] P17 [0  ] P18 [0  ] P19 [0  ] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 3
+--------------------------------------------
+Rename_Dispatch: I[0] 
+Decode_Rename  : I[1] 
+Fetch          : I[2] 
+has isn: 1
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [0  ] R1  [0  ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [0  ] R6  [0  ] R7  [0  ] 
+R8  [0  ] R9  [0  ] R10 [0  ] R11 [0  ] R12 [0  ] R13 [0  ] R14 [0  ] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [0  ] P1  [0  ] P2  [0  ] P3  [0  ] P4  [0  ] P5  [0  ] P6  [0  ] P7  [0  ] P8  [0  ] P9  [0  ] 
+P10 [0  ] P11 [0  ] P12 [0  ] P13 [0  ] P14 [0  ] P15 [0  ] P16 [0  ] P17 [0  ] P18 [0  ] P19 [0  ] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 4
+--------------------------------------------
+Physical Reg Allocation: +P[0]
+RNT change R[1]=p[0]
+ROB entry created for I[0] 
+IQ + I[0]
+All queue entry: I[0] 
+Rename_Dispatch: I[1] 
+Decode_Rename  : I[2] 
+Fetch          : I[3] 
+has isn: 1
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [0  ] R1  [0  ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [0  ] R6  [0  ] R7  [0  ] 
+R8  [0  ] R9  [0  ] R10 [0  ] R11 [0  ] R12 [0  ] R13 [0  ] R14 [0  ] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [0  ] P1  [0  ] P2  [0  ] P3  [0  ] P4  [0  ] P5  [0  ] P6  [0  ] P7  [0  ] P8  [0  ] P9  [0  ] 
+P10 [0  ] P11 [0  ] P12 [0  ] P13 [0  ] P14 [0  ] P15 [0  ] P16 [0  ] P17 [0  ] P18 [0  ] P19 [0  ] 
+ROB head= I[0] ROB tail= I[0] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 5
+--------------------------------------------
+IQ - I[0]
+Integer Functional Unit: I[0] 
+Physical Reg Allocation: +P[1]
+RNT change R[5]=p[1]
+ROB entry created for I[1] 
+IQ + I[1]
+All queue entry: I[1] 
+Rename_Dispatch: I[2] 
+Decode_Rename  : I[3] 
+Fetch          : I[4] 
+has isn: 1
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [0  ] R1  [0  ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [0  ] R6  [0  ] R7  [0  ] 
+R8  [0  ] R9  [0  ] R10 [0  ] R11 [0  ] R12 [0  ] R13 [0  ] R14 [0  ] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [0  ] P1  [0  ] P2  [0  ] P3  [0  ] P4  [0  ] P5  [0  ] P6  [0  ] P7  [0  ] P8  [0  ] P9  [0  ] 
+P10 [0  ] P11 [0  ] P12 [0  ] P13 [0  ] P14 [0  ] P15 [0  ] P16 [0  ] P17 [0  ] P18 [0  ] P19 [0  ] 
+ROB head= I[0] ROB tail= I[1] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 6
+--------------------------------------------
+Integer forward Bus: I[0] 
+IQ - I[1]
+Integer Functional Unit: I[1] 
+Physical Reg Allocation: +P[2]
+RNT change R[10]=p[2]
+ROB entry created for I[2] 
+IQ + I[2]
+All queue entry: I[2] 
+Rename_Dispatch: I[3] 
+Decode_Rename  : I[4] 
+Fetch          : I[5] 
+has isn: 1
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [0  ] R1  [0  ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [0  ] R6  [0  ] R7  [0  ] 
+R8  [0  ] R9  [0  ] R10 [0  ] R11 [0  ] R12 [0  ] R13 [0  ] R14 [0  ] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [0  ] P1  [0  ] P2  [0  ] P3  [0  ] P4  [0  ] P5  [0  ] P6  [0  ] P7  [0  ] P8  [0  ] P9  [0  ] 
+P10 [0  ] P11 [0  ] P12 [0  ] P13 [0  ] P14 [0  ] P15 [0  ] P16 [0  ] P17 [0  ] P18 [0  ] P19 [0  ] 
+ROB head= I[0] ROB tail= I[2] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 7
+--------------------------------------------
+PRF updated for P[0]
+Integer WB     : I[0] 
+ROB commit: I[0]
+Integer forward Bus: I[1] 
+IQ - I[2]
+Integer Functional Unit: I[2] 
+MRP CCR=P3
+Physical Reg Allocation: +P[3]
+RNT change R[6]=p[3]
+ROB entry created for I[3] 
+IQ + I[3]
+All queue entry: I[3] 
+Rename_Dispatch: I[4] 
+Decode_Rename  : I[5] 
+Fetch          : I[6] 
+has isn: 1
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [0  ] R1  [0  ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [0  ] R6  [0  ] R7  [0  ] 
+R8  [0  ] R9  [0  ] R10 [0  ] R11 [0  ] R12 [0  ] R13 [0  ] R14 [0  ] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [0  ] P2  [0  ] P3  [0  ] P4  [0  ] P5  [0  ] P6  [0  ] P7  [0  ] P8  [0  ] P9  [0  ] 
+P10 [0  ] P11 [0  ] P12 [0  ] P13 [0  ] P14 [0  ] P15 [0  ] P16 [0  ] P17 [0  ] P18 [0  ] P19 [0  ] 
+0ROB head= I[1] ROB tail= I[3] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 8
+--------------------------------------------
+PRF updated for P[1]
+Integer WB     : I[1] 
+PRF reg Freed: P[0]
+ARF updates for R[1]
+Updating RNT for R[1]
+ROB commit: I[1]
+Integer forward Bus: I[2] 
+Physical Reg Allocation: +P[4]
+RNT change R[13]=p[4]
+ROB entry created for I[4] 
+IQ + I[4]
+All queue entry: I[4] 
+Rename_Dispatch: I[5] 
+Decode_Rename  : I[6] 
+Fetch          : I[7] 
+has isn: 1
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [0  ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [0  ] R6  [0  ] R7  [0  ] 
+R8  [0  ] R9  [0  ] R10 [0  ] R11 [0  ] R12 [0  ] R13 [0  ] R14 [0  ] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [45 ] P2  [0  ] P3  [0  ] P4  [0  ] P5  [0  ] P6  [0  ] P7  [0  ] P8  [0  ] P9  [0  ] 
+P10 [0  ] P11 [0  ] P12 [0  ] P13 [0  ] P14 [0  ] P15 [0  ] P16 [0  ] P17 [0  ] P18 [0  ] P19 [0  ] 
+0ROB head= I[2] ROB tail= I[4] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 9
+--------------------------------------------
+PRF updated for P[2]
+Integer WB     : I[2] 
+PRF reg Freed: P[1]
+ARF updates for R[5]
+Updating RNT for R[5]
+ROB commit: I[2]
+IQ - I[3]
+Integer Functional Unit: I[3] 
+MRP CCR=P5
+Physical Reg Allocation: +P[5]
+RNT change R[12]=p[5]
+ROB entry created for I[5] 
+IQ + I[5]
+All queue entry: I[5] 
+Rename_Dispatch: I[6] 
+Decode_Rename  : I[7] 
+Fetch          : I[8] 
+has isn: 1
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [0  ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [0  ] R7  [0  ] 
+R8  [0  ] R9  [0  ] R10 [0  ] R11 [0  ] R12 [0  ] R13 [0  ] R14 [0  ] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [45 ] P2  [230] P3  [0  ] P4  [0  ] P5  [0  ] P6  [0  ] P7  [0  ] P8  [0  ] P9  [0  ] 
+P10 [0  ] P11 [0  ] P12 [0  ] P13 [0  ] P14 [0  ] P15 [0  ] P16 [0  ] P17 [0  ] P18 [0  ] P19 [0  ] 
+0ROB head= I[3] ROB tail= I[5] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 10
+--------------------------------------------
+PRF reg Freed: P[2]
+ARF updates for R[10]
+Updating RNT for R[10]
+Integer forward Bus: I[3] 
+IQ - I[4]
+Integer Functional Unit: I[4] 
+MRP CCR=P6
+Physical Reg Allocation: +P[6]
+RNT change R[12]=p[6]
+ROB entry created for I[6] 
+IQ + I[6]
+All queue entry: I[6] 
+Rename_Dispatch: I[7] 
+Decode_Rename  : I[8] 
+Fetch          : I[9] 
+has isn: 1
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [0  ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [0  ] R7  [0  ] 
+R8  [0  ] R9  [0  ] R10 [230] R11 [0  ] R12 [0  ] R13 [0  ] R14 [0  ] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [45 ] P2  [230] P3  [0  ] P4  [0  ] P5  [0  ] P6  [0  ] P7  [0  ] P8  [0  ] P9  [0  ] 
+P10 [0  ] P11 [0  ] P12 [0  ] P13 [0  ] P14 [0  ] P15 [0  ] P16 [0  ] P17 [0  ] P18 [0  ] P19 [0  ] 
+0ROB head= I[3] ROB tail= I[6] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 11
+--------------------------------------------
+PRF updated for P[3]
+after the result zero flag is 0
+after the result positive flag is 0
+Integer WB     : I[3] 
+ROB commit: I[3]
+Integer forward Bus: I[4] 
+IQ - I[5]
+Integer Functional Unit: I[5] 
+ROB entry created for I[7] 
+LSQ tail= I[7] LSQ head= I[7] 
+IQ + I[7]
+All queue entry: I[7] 
+Rename_Dispatch: I[8] 
+Decode_Rename  : I[9] 
+Fetch          : I[10] 
+has isn: 1
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [0  ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [0  ] R7  [0  ] 
+R8  [0  ] R9  [0  ] R10 [230] R11 [0  ] R12 [0  ] R13 [0  ] R14 [0  ] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [45 ] P2  [230] P3  [275] P4  [0  ] P5  [0  ] P6  [0  ] P7  [0  ] P8  [0  ] P9  [0  ] 
+P10 [0  ] P11 [0  ] P12 [0  ] P13 [0  ] P14 [0  ] P15 [0  ] P16 [0  ] P17 [0  ] P18 [0  ] P19 [0  ] 
+0ROB head= I[4] ROB tail= I[7] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 12
+--------------------------------------------
+PRF updated for P[4]
+Integer WB     : I[4] 
+MRA CCR=R[6]
+PRF reg Freed: P[3]
+ARF updates for R[6]
+Updating RNT for R[6]
+ROB commit: I[4]
+Integer forward Bus: I[5] 
+IQ - I[6]
+Integer Functional Unit: I[6] 
+Physical Reg Allocation: +P[7]
+RNT change R[14]=p[7]
+ROB entry created for I[8] 
+LSQ tail= I[8] LSQ head= I[7] 
+IQ + I[8]
+All queue entry: I[8] 
+Rename_Dispatch: I[9] 
+Decode_Rename  : I[10] 
+Fetch          : I[11] 
+has isn: 1
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [0  ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [0  ] R9  [0  ] R10 [230] R11 [0  ] R12 [0  ] R13 [0  ] R14 [0  ] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [45 ] P2  [230] P3  [275] P4  [20 ] P5  [0  ] P6  [0  ] P7  [0  ] P8  [0  ] P9  [0  ] 
+P10 [0  ] P11 [0  ] P12 [0  ] P13 [0  ] P14 [0  ] P15 [0  ] P16 [0  ] P17 [0  ] P18 [0  ] P19 [0  ] 
+275ROB head= I[5] ROB tail= I[8] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 13
+--------------------------------------------
+PRF updated for P[5]
+after the result zero flag is 0
+after the result positive flag is 0
+Integer WB     : I[5] 
+PRF reg Freed: P[4]
+ARF updates for R[13]
+Updating RNT for R[13]
+ROB commit: I[5]
+Integer forward Bus: I[6] 
+IQ - I[7]
+Integer Functional Unit: I[7] 
+Physical Reg Allocation: +P[8]
+RNT change R[0]=p[8]
+ROB entry created for I[9] 
+IQ + I[9]
+All queue entry: I[9] 
+Rename_Dispatch: I[10] 
+Decode_Rename  : I[11] 
+Fetch          : I[12] 
+has isn: 1
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [0  ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [0  ] R9  [0  ] R10 [230] R11 [0  ] R12 [0  ] R13 [20 ] R14 [0  ] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [45 ] P2  [230] P3  [275] P4  [20 ] P5  [-45] P6  [0  ] P7  [0  ] P8  [0  ] P9  [0  ] 
+P10 [0  ] P11 [0  ] P12 [0  ] P13 [0  ] P14 [0  ] P15 [0  ] P16 [0  ] P17 [0  ] P18 [0  ] P19 [0  ] 
+275ROB head= I[6] ROB tail= I[9] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 14
+--------------------------------------------
+PRF updated for P[6]
+after the result zero flag is 1
+after the result positive flag is 0
+Integer WB     : I[6] 
+MRA CCR=R[12]
+PRF reg Freed: P[5]
+ARF updates for R[12]
+ROB commit: I[6]
+LSQ I[7] memory address calculated 
+Integer forward Bus: I[7] 
+**************************************
+ROB index 7
+**************************************
+IQ - I[8]
+Integer Functional Unit: I[8] 
+Physical Reg Allocation: +P[9]
+RNT change R[8]=p[9]
+ROB entry created for I[10] 
+IQ + I[10]
+All queue entry: I[10] 
+Rename_Dispatch: I[11] 
+Decode_Rename  : I[12] 
+Fetch          : I[13] 
+has isn: 1
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [0  ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [0  ] R9  [0  ] R10 [230] R11 [0  ] R12 [-45] R13 [20 ] R14 [0  ] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [45 ] P2  [230] P3  [275] P4  [20 ] P5  [-45] P6  [265] P7  [0  ] P8  [0  ] P9  [0  ] 
+P10 [0  ] P11 [0  ] P12 [0  ] P13 [0  ] P14 [0  ] P15 [0  ] P16 [0  ] P17 [0  ] P18 [0  ] P19 [0  ] 
+265ROB head= I[7] ROB tail= I[10] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 15
+--------------------------------------------
+MRA CCR=R[12]
+Updating RNT for CCR
+PRF reg Freed: P[6]
+ARF updates for R[12]
+Updating RNT for R[12]
+LSQ I[8] memory address calculated 
+Integer forward Bus: I[8] 
+Memory I[7] in progress
+Memory         : I[7] 
+IQ - I[9]
+Integer Functional Unit: I[9] 
+ROB entry created for I[11] 
+LSQ tail= I[11] LSQ head= I[8] 
+IQ + I[11]
+All queue entry: I[11] 
+Rename_Dispatch: I[12] 
+Decode_Rename  : I[13] 
+Fetch          : I[14] 
+has isn: 1
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [0  ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [0  ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [0  ] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [45 ] P2  [230] P3  [275] P4  [20 ] P5  [-45] P6  [265] P7  [0  ] P8  [0  ] P9  [0  ] 
+P10 [0  ] P11 [0  ] P12 [0  ] P13 [0  ] P14 [0  ] P15 [0  ] P16 [0  ] P17 [0  ] P18 [0  ] P19 [0  ] 
+ROB head= I[7] ROB tail= I[11] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 16
+--------------------------------------------
+Integer forward Bus: I[9] 
+Memory I[7] completed
+Memory         : I[7] 
+**************************************
+ROB index 8
+**************************************
+IQ - I[10]
+Integer Functional Unit: I[10] 
+MRP CCR=P10
+Physical Reg Allocation: +P[10]
+RNT change R[10]=p[10]
+ROB entry created for I[12] 
+IQ + I[12]
+All queue entry: I[12] 
+Rename_Dispatch: I[13] 
+Decode_Rename  : I[14] 
+Fetch          : I[15] 
+has isn: 1
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [0  ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [0  ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [0  ] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [45 ] P2  [230] P3  [275] P4  [20 ] P5  [-45] P6  [265] P7  [0  ] P8  [0  ] P9  [0  ] 
+P10 [0  ] P11 [0  ] P12 [0  ] P13 [0  ] P14 [0  ] P15 [0  ] P16 [0  ] P17 [0  ] P18 [0  ] P19 [0  ] 
+265ROB head= I[7] ROB tail= I[12] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 17
+--------------------------------------------
+PRF updated for P[8]
+Integer WB     : I[9] 
+data[32]=275
+ROB I[-998] status bit updated
+Memory forward Bus: I[7] 
+Integer forward Bus: I[10] 
+Memory I[8] in progress
+Memory         : I[8] 
+IQ - I[11]
+Integer Functional Unit: I[11] 
+Physical Reg Allocation: +P[11]
+RNT change R[1]=p[11]
+ROB entry created for I[13] 
+IQ + I[13]
+All queue entry: I[13] 
+Rename_Dispatch: I[14] 
+Decode_Rename  : I[15] 
+Fetch          : I[16] 
+has isn: 1
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [0  ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [0  ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [0  ] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [45 ] P2  [230] P3  [275] P4  [20 ] P5  [-45] P6  [265] P7  [0  ] P8  [12 ] P9  [0  ] 
+P10 [0  ] P11 [0  ] P12 [0  ] P13 [0  ] P14 [0  ] P15 [0  ] P16 [0  ] P17 [0  ] P18 [0  ] P19 [0  ] 
+265ROB head= I[7] ROB tail= I[13] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 18
+--------------------------------------------
+PRF updated for P[9]
+Integer WB     : I[10] 
+ROB commit: I[7]
+LSQ I[11] memory address calculated 
+Integer forward Bus: I[11] 
+Memory I[8] completed
+Memory         : I[8] 
+IQ - I[12]
+MUL FU1        : I[12] 
+Physical Reg Allocation: +P[12]
+RNT change R[10]=p[12]
+ROB entry created for I[14] 
+IQ + I[14]
+All queue entry: I[14] 
+Rename_Dispatch: I[15] 
+Decode_Rename  : I[16] 
+Fetch          : I[17] 
+has isn: 1
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [0  ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [0  ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [0  ] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [45 ] P2  [230] P3  [275] P4  [20 ] P5  [-45] P6  [265] P7  [0  ] P8  [12 ] P9  [22 ] 
+P10 [0  ] P11 [0  ] P12 [0  ] P13 [0  ] P14 [0  ] P15 [0  ] P16 [0  ] P17 [0  ] P18 [0  ] P19 [0  ] 
+265ROB head= I[8] ROB tail= I[14] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 19
+--------------------------------------------
+Memory forward Bus: I[8] 
+IQ - I[14]
+MUL FU2        : I[12] 
+Integer Functional Unit: I[14] 
+Physical Reg Allocation: +P[13]
+RNT change R[6]=p[13]
+ROB entry created for I[15] 
+LSQ tail= I[15] LSQ head= I[11] 
+IQ + I[15]
+All queue entry: I[15] 
+Rename_Dispatch: I[16] 
+Decode_Rename  : I[17] 
+Fetch          : I[18] 
+has isn: 1
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [0  ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [0  ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [0  ] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [45 ] P2  [230] P3  [275] P4  [20 ] P5  [-45] P6  [265] P7  [0  ] P8  [12 ] P9  [22 ] 
+P10 [0  ] P11 [0  ] P12 [0  ] P13 [0  ] P14 [0  ] P15 [0  ] P16 [0  ] P17 [0  ] P18 [0  ] P19 [0  ] 
+265ROB head= I[8] ROB tail= I[15] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 20
+--------------------------------------------
+PRF updated for P[7]
+Memory WB      : I[8] 
+ROB commit: I[8]
+Integer forward Bus: I[14] 
+IQ - I[15]
+MUL FU3        : I[12] 
+Integer Functional Unit: I[15] 
+Physical Reg Allocation: +P[14]
+RNT change R[12]=p[14]
+ROB entry created for I[16] 
+IQ + I[16]
+All queue entry: I[16] 
+Rename_Dispatch: I[17] 
+Decode_Rename  : I[18] 
+Fetch          : I[19] 
+has isn: 1
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [0  ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [0  ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [0  ] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [45 ] P2  [230] P3  [275] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [0  ] P11 [0  ] P12 [0  ] P13 [0  ] P14 [0  ] P15 [0  ] P16 [0  ] P17 [0  ] P18 [0  ] P19 [0  ] 
+265ROB head= I[9] ROB tail= I[16] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 21
+--------------------------------------------
+PRF updated for P[12]
+Integer WB     : I[14] 
+PRF reg Freed: P[7]
+ARF updates for R[14]
+Updating RNT for R[14]
+ROB commit: I[9]
+LSQ I[15] memory address calculated 
+Integer forward Bus: I[15] 
+**************************************
+ROB index 15
+**************************************
+IQ - I[16]
+MUL FU4        : I[12] 
+Integer Functional Unit: I[16] 
+Physical Reg Allocation: +P[15]
+RNT change R[8]=p[15]
+ROB entry created for I[17] 
+IQ + I[17]
+All queue entry: I[17] 
+Rename_Dispatch: I[18] 
+Decode_Rename  : I[19] 
+Fetch          : I[20] 
+has isn: 1
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [0  ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [0  ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [45 ] P2  [230] P3  [275] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [0  ] P11 [0  ] P12 [285] P13 [0  ] P14 [0  ] P15 [0  ] P16 [0  ] P17 [0  ] P18 [0  ] P19 [0  ] 
+265ROB head= I[10] ROB tail= I[17] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 22
+--------------------------------------------
+PRF reg Freed: P[8]
+ARF updates for R[0]
+Updating RNT for R[0]
+ROB commit: I[10]
+Integer forward Bus: I[16] 
+Mul fwd bus    : I[12] 
+Memory I[15] in progress
+Memory         : I[15] 
+MRP CCR=P16
+Physical Reg Allocation: +P[16]
+RNT change R[6]=p[16]
+ROB entry created for I[18] 
+IQ + I[18]
+All queue entry: I[18] 
+Rename_Dispatch: I[19] 
+Decode_Rename  : I[20] 
+Fetch          : I[21] 
+has isn: 1
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [0  ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [45 ] P2  [230] P3  [275] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [0  ] P11 [0  ] P12 [285] P13 [0  ] P14 [0  ] P15 [0  ] P16 [0  ] P17 [0  ] P18 [0  ] P19 [0  ] 
+265ROB head= I[11] ROB tail= I[18] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 23
+--------------------------------------------
+PRF updated for P[14]
+Integer WB     : I[16] 
+PRF updated for P[10]
+Multiplication WB: I[12] 
+PRF reg Freed: P[9]
+ARF updates for R[8]
+Memory I[15] completed
+Memory         : I[15] 
+IQ - I[13]
+Integer Functional Unit: I[13] 
+MRP CCR=P17
+Physical Reg Allocation: +P[17]
+RNT change R[0]=p[17]
+ROB entry created for I[19] 
+IQ + I[19]
+All queue entry: I[19] 
+Rename_Dispatch: I[20] 
+Decode_Rename  : I[21] 
+Fetch          : I[22] 
+has isn: 1
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [45 ] P2  [230] P3  [275] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [0  ] P12 [285] P13 [0  ] P14 [10 ] P15 [0  ] P16 [0  ] P17 [0  ] P18 [0  ] P19 [0  ] 
+265ROB head= I[11] ROB tail= I[19] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 24
+--------------------------------------------
+Memory forward Bus: I[15] 
+Integer forward Bus: I[13] 
+IQ - I[18]
+Integer Functional Unit: I[18] 
+MRP CCR=P18
+Physical Reg Allocation: +P[18]
+RNT change R[0]=p[18]
+ROB entry created for I[20] 
+IQ + I[20]
+All queue entry: I[20] 
+Rename_Dispatch: I[21] 
+Decode_Rename  : I[22] 
+Fetch          : I[23] 
+has isn: 1
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [45 ] P2  [230] P3  [275] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [0  ] P12 [285] P13 [0  ] P14 [10 ] P15 [0  ] P16 [0  ] P17 [0  ] P18 [0  ] P19 [0  ] 
+265ROB head= I[11] ROB tail= I[20] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 25
+--------------------------------------------
+PRF updated for P[11]
+Integer WB     : I[13] 
+PRF updated for P[13]
+Memory WB      : I[15] 
+Integer forward Bus: I[18] 
+IQ - I[17]
+Integer Functional Unit: I[17] 
+MRP CCR=P19
+Physical Reg Allocation: +P[19]
+RNT change R[0]=p[19]
+ROB entry created for I[21] 
+IQ + I[21]
+All queue entry: I[21] 
+Rename_Dispatch: I[22] 
+Decode_Rename  : I[23] 
+Fetch          : I[24] 
+has isn: 1
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [45 ] P2  [230] P3  [275] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [0  ] P16 [0  ] P17 [0  ] P18 [0  ] P19 [0  ] 
+265ROB head= I[11] ROB tail= I[21] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 26
+--------------------------------------------
+PRF updated for P[16]
+after the result zero flag is 0
+after the result positive flag is 0
+Integer WB     : I[18] 
+Integer forward Bus: I[17] 
+IQ - I[19]
+Integer Functional Unit: I[19] 
+MRP CCR=P0
+Physical Reg Allocation: +P[0]
+RNT change R[0]=p[0]
+ROB entry created for I[22] 
+IQ + I[22]
+All queue entry: I[22] 
+Rename_Dispatch: I[23] 
+Decode_Rename  : I[24] 
+Fetch          : I[25] 
+has isn: 1
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [45 ] P2  [230] P3  [275] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [0  ] P16 [-263] P17 [0  ] P18 [0  ] P19 [0  ] 
+10ROB head= I[11] ROB tail= I[22] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 27
+--------------------------------------------
+PRF updated for P[15]
+Integer WB     : I[17] 
+Integer forward Bus: I[19] 
+MRP CCR=P1
+Physical Reg Allocation: +P[1]
+RNT change R[0]=p[1]
+ROB entry created for I[23] 
+IQ + I[23]
+All queue entry: I[23] 
+Rename_Dispatch: I[24] 
+Decode_Rename  : I[25] 
+Fetch          : I[26] 
+has isn: 1
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [45 ] P2  [230] P3  [275] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [1  ] P16 [-263] P17 [0  ] P18 [0  ] P19 [0  ] 
+45ROB head= I[11] ROB tail= I[23] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 28
+--------------------------------------------
+PRF updated for P[17]
+after the result zero flag is 0
+after the result positive flag is 0
+Integer WB     : I[19] 
+IQ - I[20]
+Integer Functional Unit: I[20] 
+MRP CCR=P2
+Physical Reg Allocation: +P[2]
+RNT change R[0]=p[2]
+ROB entry created for I[24] 
+IQ + I[24]
+All queue entry: I[24] 
+Rename_Dispatch: I[25] 
+Decode_Rename  : I[26] 
+Fetch          : I[27] 
+has isn: 1
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [45 ] P2  [230] P3  [275] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [1  ] P16 [-263] P17 [24 ] P18 [0  ] P19 [0  ] 
+230ROB head= I[11] ROB tail= I[24] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 29
+--------------------------------------------
+Integer forward Bus: I[20] 
+IQ - I[23]
+Integer Functional Unit: I[23] 
+MRP CCR=P3
+Physical Reg Allocation: +P[3]
+RNT change R[0]=p[3]
+ROB entry created for I[25] 
+IQ + I[25]
+All queue entry: I[25] 
+Rename_Dispatch: I[26] 
+Decode_Rename  : I[27] 
+Fetch          : I[28] 
+has isn: 1
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [45 ] P2  [230] P3  [275] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [1  ] P16 [-263] P17 [24 ] P18 [0  ] P19 [0  ] 
+275ROB head= I[11] ROB tail= I[25] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 30
+--------------------------------------------
+PRF updated for P[18]
+after the result zero flag is 1
+after the result positive flag is 0
+Integer WB     : I[20] 
+Integer forward Bus: I[23] 
+IQ - I[21]
+Integer Functional Unit: I[21] 
+MRP CCR=P4
+Physical Reg Allocation: +P[4]
+RNT change R[0]=p[4]
+ROB entry created for I[-1000] 
+IQ + I[26]
+All queue entry: I[26] 
+Rename_Dispatch: I[27] 
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [45 ] P2  [230] P3  [275] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [1  ] P16 [-263] P17 [24 ] P18 [48 ] P19 [0  ] 
+20ROB head= I[11] ROB tail= I[-1000] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 31
+--------------------------------------------
+PRF updated for P[1]
+after the result zero flag is 1
+after the result positive flag is 0
+Integer WB     : I[23] 
+Integer forward Bus: I[21] 
+IQ - I[24]
+Integer Functional Unit: I[24] 
+MRP CCR=P5
+Physical Reg Allocation: +P[5]
+RNT change R[0]=p[5]
+ROB entry created for I[-1000] 
+IQ + I[27]
+All queue entry: I[27] 
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [20 ] P2  [230] P3  [275] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [1  ] P16 [-263] P17 [24 ] P18 [48 ] P19 [0  ] 
+-45ROB head= I[-1000] ROB tail= I[-1000] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 32
+--------------------------------------------
+PRF updated for P[19]
+after the result zero flag is 0
+after the result positive flag is 0
+Integer WB     : I[21] 
+Integer forward Bus: I[24] 
+IQ - I[25]
+Integer Functional Unit: I[25] 
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [20 ] P2  [230] P3  [275] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [1  ] P16 [-263] P17 [24 ] P18 [48 ] P19 [96 ] 
+-45ROB head= I[-1000] ROB tail= I[-1000] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 33
+--------------------------------------------
+PRF updated for P[2]
+after the result zero flag is 0
+after the result positive flag is 0
+Integer WB     : I[24] 
+Integer forward Bus: I[25] 
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [20 ] P2  [90 ] P3  [275] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [1  ] P16 [-263] P17 [24 ] P18 [48 ] P19 [96 ] 
+-45ROB head= I[-1000] ROB tail= I[-1000] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 34
+--------------------------------------------
+PRF updated for P[3]
+after the result zero flag is 0
+after the result positive flag is 0
+Integer WB     : I[25] 
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [20 ] P2  [90 ] P3  [460] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [1  ] P16 [-263] P17 [24 ] P18 [48 ] P19 [96 ] 
+-45ROB head= I[-1000] ROB tail= I[-1000] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 35
+--------------------------------------------
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [20 ] P2  [90 ] P3  [460] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [1  ] P16 [-263] P17 [24 ] P18 [48 ] P19 [96 ] 
+-45ROB head= I[-1000] ROB tail= I[-1000] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 36
+--------------------------------------------
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [20 ] P2  [90 ] P3  [460] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [1  ] P16 [-263] P17 [24 ] P18 [48 ] P19 [96 ] 
+-45ROB head= I[-1000] ROB tail= I[-1000] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 37
+--------------------------------------------
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [20 ] P2  [90 ] P3  [460] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [1  ] P16 [-263] P17 [24 ] P18 [48 ] P19 [96 ] 
+-45ROB head= I[-1000] ROB tail= I[-1000] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 38
+--------------------------------------------
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [20 ] P2  [90 ] P3  [460] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [1  ] P16 [-263] P17 [24 ] P18 [48 ] P19 [96 ] 
+-45ROB head= I[-1000] ROB tail= I[-1000] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 39
+--------------------------------------------
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [20 ] P2  [90 ] P3  [460] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [1  ] P16 [-263] P17 [24 ] P18 [48 ] P19 [96 ] 
+-45ROB head= I[-1000] ROB tail= I[-1000] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 40
+--------------------------------------------
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [20 ] P2  [90 ] P3  [460] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [1  ] P16 [-263] P17 [24 ] P18 [48 ] P19 [96 ] 
+-45ROB head= I[-1000] ROB tail= I[-1000] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 41
+--------------------------------------------
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [20 ] P2  [90 ] P3  [460] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [1  ] P16 [-263] P17 [24 ] P18 [48 ] P19 [96 ] 
+-45ROB head= I[-1000] ROB tail= I[-1000] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 42
+--------------------------------------------
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [20 ] P2  [90 ] P3  [460] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [1  ] P16 [-263] P17 [24 ] P18 [48 ] P19 [96 ] 
+-45ROB head= I[-1000] ROB tail= I[-1000] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 43
+--------------------------------------------
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [20 ] P2  [90 ] P3  [460] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [1  ] P16 [-263] P17 [24 ] P18 [48 ] P19 [96 ] 
+-45ROB head= I[-1000] ROB tail= I[-1000] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 44
+--------------------------------------------
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [20 ] P2  [90 ] P3  [460] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [1  ] P16 [-263] P17 [24 ] P18 [48 ] P19 [96 ] 
+-45ROB head= I[-1000] ROB tail= I[-1000] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 45
+--------------------------------------------
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [20 ] P2  [90 ] P3  [460] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [1  ] P16 [-263] P17 [24 ] P18 [48 ] P19 [96 ] 
+-45ROB head= I[-1000] ROB tail= I[-1000] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 46
+--------------------------------------------
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [20 ] P2  [90 ] P3  [460] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [1  ] P16 [-263] P17 [24 ] P18 [48 ] P19 [96 ] 
+-45ROB head= I[-1000] ROB tail= I[-1000] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 47
+--------------------------------------------
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [20 ] P2  [90 ] P3  [460] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [1  ] P16 [-263] P17 [24 ] P18 [48 ] P19 [96 ] 
+-45ROB head= I[-1000] ROB tail= I[-1000] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 48
+--------------------------------------------
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [20 ] P2  [90 ] P3  [460] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [1  ] P16 [-263] P17 [24 ] P18 [48 ] P19 [96 ] 
+-45ROB head= I[-1000] ROB tail= I[-1000] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 49
+--------------------------------------------
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [20 ] P2  [90 ] P3  [460] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [1  ] P16 [-263] P17 [24 ] P18 [48 ] P19 [96 ] 
+-45ROB head= I[-1000] ROB tail= I[-1000] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 50
+--------------------------------------------
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [20 ] P2  [90 ] P3  [460] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [1  ] P16 [-263] P17 [24 ] P18 [48 ] P19 [96 ] 
+-45ROB head= I[-1000] ROB tail= I[-1000] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 51
+--------------------------------------------
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [20 ] P2  [90 ] P3  [460] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [1  ] P16 [-263] P17 [24 ] P18 [48 ] P19 [96 ] 
+-45ROB head= I[-1000] ROB tail= I[-1000] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 52
+--------------------------------------------
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [20 ] P2  [90 ] P3  [460] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [1  ] P16 [-263] P17 [24 ] P18 [48 ] P19 [96 ] 
+-45ROB head= I[-1000] ROB tail= I[-1000] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 53
+--------------------------------------------
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [20 ] P2  [90 ] P3  [460] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [1  ] P16 [-263] P17 [24 ] P18 [48 ] P19 [96 ] 
+-45ROB head= I[-1000] ROB tail= I[-1000] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 54
+--------------------------------------------
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [20 ] P2  [90 ] P3  [460] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [1  ] P16 [-263] P17 [24 ] P18 [48 ] P19 [96 ] 
+-45ROB head= I[-1000] ROB tail= I[-1000] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 55
+--------------------------------------------
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [20 ] P2  [90 ] P3  [460] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [1  ] P16 [-263] P17 [24 ] P18 [48 ] P19 [96 ] 
+-45ROB head= I[-1000] ROB tail= I[-1000] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 56
+--------------------------------------------
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [20 ] P2  [90 ] P3  [460] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [1  ] P16 [-263] P17 [24 ] P18 [48 ] P19 [96 ] 
+-45ROB head= I[-1000] ROB tail= I[-1000] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 57
+--------------------------------------------
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [20 ] P2  [90 ] P3  [460] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [1  ] P16 [-263] P17 [24 ] P18 [48 ] P19 [96 ] 
+-45ROB head= I[-1000] ROB tail= I[-1000] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 58
+--------------------------------------------
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [20 ] P2  [90 ] P3  [460] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [1  ] P16 [-263] P17 [24 ] P18 [48 ] P19 [96 ] 
+-45ROB head= I[-1000] ROB tail= I[-1000] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 59
+--------------------------------------------
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [20 ] P2  [90 ] P3  [460] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [1  ] P16 [-263] P17 [24 ] P18 [48 ] P19 [96 ] 
+-45ROB head= I[-1000] ROB tail= I[-1000] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 60
+--------------------------------------------
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [20 ] P2  [90 ] P3  [460] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [1  ] P16 [-263] P17 [24 ] P18 [48 ] P19 [96 ] 
+-45ROB head= I[-1000] ROB tail= I[-1000] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 61
+--------------------------------------------
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [20 ] P2  [90 ] P3  [460] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [1  ] P16 [-263] P17 [24 ] P18 [48 ] P19 [96 ] 
+-45ROB head= I[-1000] ROB tail= I[-1000] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 62
+--------------------------------------------
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [20 ] P2  [90 ] P3  [460] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [1  ] P16 [-263] P17 [24 ] P18 [48 ] P19 [96 ] 
+-45ROB head= I[-1000] ROB tail= I[-1000] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 63
+--------------------------------------------
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [20 ] P2  [90 ] P3  [460] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [1  ] P16 [-263] P17 [24 ] P18 [48 ] P19 [96 ] 
+-45ROB head= I[-1000] ROB tail= I[-1000] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 64
+--------------------------------------------
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [20 ] P2  [90 ] P3  [460] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [1  ] P16 [-263] P17 [24 ] P18 [48 ] P19 [96 ] 
+-45ROB head= I[-1000] ROB tail= I[-1000] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 65
+--------------------------------------------
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [20 ] P2  [90 ] P3  [460] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [1  ] P16 [-263] P17 [24 ] P18 [48 ] P19 [96 ] 
+-45ROB head= I[-1000] ROB tail= I[-1000] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 66
+--------------------------------------------
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [20 ] P2  [90 ] P3  [460] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [1  ] P16 [-263] P17 [24 ] P18 [48 ] P19 [96 ] 
+-45ROB head= I[-1000] ROB tail= I[-1000] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 67
+--------------------------------------------
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [20 ] P2  [90 ] P3  [460] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [1  ] P16 [-263] P17 [24 ] P18 [48 ] P19 [96 ] 
+-45ROB head= I[-1000] ROB tail= I[-1000] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 68
+--------------------------------------------
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [20 ] P2  [90 ] P3  [460] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [1  ] P16 [-263] P17 [24 ] P18 [48 ] P19 [96 ] 
+-45ROB head= I[-1000] ROB tail= I[-1000] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 69
+--------------------------------------------
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [20 ] P2  [90 ] P3  [460] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [1  ] P16 [-263] P17 [24 ] P18 [48 ] P19 [96 ] 
+-45ROB head= I[-1000] ROB tail= I[-1000] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 70
+--------------------------------------------
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [20 ] P2  [90 ] P3  [460] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [1  ] P16 [-263] P17 [24 ] P18 [48 ] P19 [96 ] 
+-45ROB head= I[-1000] ROB tail= I[-1000] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 71
+--------------------------------------------
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [20 ] P2  [90 ] P3  [460] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [1  ] P16 [-263] P17 [24 ] P18 [48 ] P19 [96 ] 
+-45ROB head= I[-1000] ROB tail= I[-1000] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 72
+--------------------------------------------
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [20 ] P2  [90 ] P3  [460] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [1  ] P16 [-263] P17 [24 ] P18 [48 ] P19 [96 ] 
+-45ROB head= I[-1000] ROB tail= I[-1000] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 73
+--------------------------------------------
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [20 ] P2  [90 ] P3  [460] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [1  ] P16 [-263] P17 [24 ] P18 [48 ] P19 [96 ] 
+-45ROB head= I[-1000] ROB tail= I[-1000] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 74
+--------------------------------------------
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [20 ] P2  [90 ] P3  [460] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [1  ] P16 [-263] P17 [24 ] P18 [48 ] P19 [96 ] 
+-45ROB head= I[-1000] ROB tail= I[-1000] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 75
+--------------------------------------------
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [20 ] P2  [90 ] P3  [460] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [1  ] P16 [-263] P17 [24 ] P18 [48 ] P19 [96 ] 
+-45ROB head= I[-1000] ROB tail= I[-1000] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 76
+--------------------------------------------
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [20 ] P2  [90 ] P3  [460] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [1  ] P16 [-263] P17 [24 ] P18 [48 ] P19 [96 ] 
+-45ROB head= I[-1000] ROB tail= I[-1000] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 77
+--------------------------------------------
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [20 ] P2  [90 ] P3  [460] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [1  ] P16 [-263] P17 [24 ] P18 [48 ] P19 [96 ] 
+-45ROB head= I[-1000] ROB tail= I[-1000] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 78
+--------------------------------------------
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [20 ] P2  [90 ] P3  [460] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [1  ] P16 [-263] P17 [24 ] P18 [48 ] P19 [96 ] 
+-45ROB head= I[-1000] ROB tail= I[-1000] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 79
+--------------------------------------------
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [20 ] P2  [90 ] P3  [460] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [1  ] P16 [-263] P17 [24 ] P18 [48 ] P19 [96 ] 
+-45ROB head= I[-1000] ROB tail= I[-1000] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 80
+--------------------------------------------
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [20 ] P2  [90 ] P3  [460] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [1  ] P16 [-263] P17 [24 ] P18 [48 ] P19 [96 ] 
+-45ROB head= I[-1000] ROB tail= I[-1000] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 81
+--------------------------------------------
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [20 ] P2  [90 ] P3  [460] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [1  ] P16 [-263] P17 [24 ] P18 [48 ] P19 [96 ] 
+-45ROB head= I[-1000] ROB tail= I[-1000] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 82
+--------------------------------------------
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [20 ] P2  [90 ] P3  [460] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [1  ] P16 [-263] P17 [24 ] P18 [48 ] P19 [96 ] 
+-45ROB head= I[-1000] ROB tail= I[-1000] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 83
+--------------------------------------------
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [20 ] P2  [90 ] P3  [460] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [1  ] P16 [-263] P17 [24 ] P18 [48 ] P19 [96 ] 
+-45ROB head= I[-1000] ROB tail= I[-1000] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 84
+--------------------------------------------
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [20 ] P2  [90 ] P3  [460] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [1  ] P16 [-263] P17 [24 ] P18 [48 ] P19 [96 ] 
+-45ROB head= I[-1000] ROB tail= I[-1000] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 85
+--------------------------------------------
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [20 ] P2  [90 ] P3  [460] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [1  ] P16 [-263] P17 [24 ] P18 [48 ] P19 [96 ] 
+-45ROB head= I[-1000] ROB tail= I[-1000] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 86
+--------------------------------------------
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [20 ] P2  [90 ] P3  [460] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [1  ] P16 [-263] P17 [24 ] P18 [48 ] P19 [96 ] 
+-45ROB head= I[-1000] ROB tail= I[-1000] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 87
+--------------------------------------------
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [20 ] P2  [90 ] P3  [460] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [1  ] P16 [-263] P17 [24 ] P18 [48 ] P19 [96 ] 
+-45ROB head= I[-1000] ROB tail= I[-1000] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 88
+--------------------------------------------
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [20 ] P2  [90 ] P3  [460] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [1  ] P16 [-263] P17 [24 ] P18 [48 ] P19 [96 ] 
+-45ROB head= I[-1000] ROB tail= I[-1000] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 89
+--------------------------------------------
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [20 ] P2  [90 ] P3  [460] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [1  ] P16 [-263] P17 [24 ] P18 [48 ] P19 [96 ] 
+-45ROB head= I[-1000] ROB tail= I[-1000] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 90
+--------------------------------------------
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [20 ] P2  [90 ] P3  [460] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [1  ] P16 [-263] P17 [24 ] P18 [48 ] P19 [96 ] 
+-45ROB head= I[-1000] ROB tail= I[-1000] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 91
+--------------------------------------------
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [20 ] P2  [90 ] P3  [460] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [1  ] P16 [-263] P17 [24 ] P18 [48 ] P19 [96 ] 
+-45ROB head= I[-1000] ROB tail= I[-1000] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 92
+--------------------------------------------
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [20 ] P2  [90 ] P3  [460] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [1  ] P16 [-263] P17 [24 ] P18 [48 ] P19 [96 ] 
+-45ROB head= I[-1000] ROB tail= I[-1000] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 93
+--------------------------------------------
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [20 ] P2  [90 ] P3  [460] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [1  ] P16 [-263] P17 [24 ] P18 [48 ] P19 [96 ] 
+-45ROB head= I[-1000] ROB tail= I[-1000] 
+Press any key to advance CPU Clock or <q> to quit:
+--------------------------------------------
+Clock Cycle #: 94
+--------------------------------------------
+----------
+ARCHITECTURAL Registers:
+----------
+R0  [12 ] R1  [10 ] R2  [0  ] R3  [0  ] R4  [0  ] R5  [45 ] R6  [275] R7  [0  ] 
+R8  [22 ] R9  [0  ] R10 [230] R11 [0  ] R12 [265] R13 [20 ] R14 [275] R15 [0  ] 
+----------
+PHYSICAL Registers:
+----------
+P0  [10 ] P1  [20 ] P2  [90 ] P3  [460] P4  [20 ] P5  [-45] P6  [265] P7  [275] P8  [12 ] P9  [22 ] 
+P10 [264] P11 [256] P12 [285] P13 [275] P14 [10 ] P15 [1  ] P16 [-263] P17 [24 ] P18 [48 ] P19 [96 ] 
+-45ROB head= I[-1000] ROB tail= I[-1000] 
+Press any key to advance CPU Clock or <q> to quit:
+APEX_CPU: Simulation Stopped, cycles = 93 instructions = 0

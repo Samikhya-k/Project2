@@ -18,8 +18,11 @@
 
 typedef struct reorder_buffer_entry
 {
+int is_allocated;
 int pc_value;
+ //address of architectural register if any
 int destination_address;
+int physical_register;
 //value or address
 int result_value;
 int store_value;
@@ -27,10 +30,13 @@ int store_value_valid;
 //valid address or valid value in result value
 int status_bit;
 int insn_type;
+int opcode;
 //register to regster 0
 //load 1
 //store 2
 //branch 3
+int positive_flag;
+int zero_flag;
 }reorder_buffer_entry;
 
 typedef struct reorder_buffer
@@ -44,4 +50,5 @@ typedef struct reorder_buffer
 int reorder_buffer_available(reorder_buffer *rob);
 int reorder_buffer_entry_addition_to_queue(reorder_buffer *rob, reorder_buffer_entry * rob_entry);
 void print_rob_entries(reorder_buffer *rob);
+int is_rob_full(reorder_buffer *rob);
 #endif

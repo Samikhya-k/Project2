@@ -12,30 +12,48 @@
 
 
 int reorder_buffer_available(reorder_buffer *rob){
-    if(rob->is_full){
-        return -1;
-    }
-    else{
+    if(is_rob_full(rob)!=1){
         return rob->tail;
     }
-
+    else{
+        return -1;
+    }
 }
+
+int is_rob_full(reorder_buffer *rob){
+    int count=0;
+    for(int i=0;i<ROB_SIZE;i++){
+        if(rob->reorder_buffer_queue[i].is_allocated==1){
+            count++;
+        }
+    }
+    if(count<ROB_SIZE-1){
+        return 0;
+    }
+    else{
+        return 1;
+    }
+}
+
+
+
 int reorder_buffer_entry_addition_to_queue(reorder_buffer *rob, reorder_buffer_entry * rob_entry){
     rob->reorder_buffer_queue[rob->tail].pc_value=rob_entry->pc_value;
     rob->reorder_buffer_queue[rob->tail].destination_address=rob_entry->destination_address;
+    rob->reorder_buffer_queue[rob->tail].physical_register=rob_entry->physical_register;
     rob->reorder_buffer_queue[rob->tail].result_value=rob_entry->result_value;
     rob->reorder_buffer_queue[rob->tail].store_value=rob_entry->store_value;
     rob->reorder_buffer_queue[rob->tail].store_value_valid=rob_entry->store_value_valid;
     rob->reorder_buffer_queue[rob->tail].status_bit=rob_entry->status_bit;
     rob->reorder_buffer_queue[rob->tail].insn_type=rob_entry->insn_type;
     rob->reorder_buffer_queue[rob->tail].pc_value=rob_entry->pc_value;
-    rob->tail=(rob->tail+1)%ROB_SIZE;
+    rob->reorder_buffer_queue[rob->tail].opcode=rob_entry->opcode;
+    rob->reorder_buffer_queue[rob->tail].is_allocated=1;
     int rob_index=rob->tail;
-    rob->tail++;
-    if(rob->tail==ROB_SIZE){
-        rob->tail=0;
-        rob->is_full=1;
-    }
+    printf("ROB entry created for I[%d] \n", (rob->reorder_buffer_queue[rob->tail].pc_value-4000)/4);
+
+    rob->tail=(rob->tail+1)%ROB_SIZE;
+    rob->is_full=is_rob_full(rob);
     return rob_index;
 }
 

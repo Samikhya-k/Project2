@@ -117,6 +117,21 @@ set_opcode_str(const char *opcode_str)
     {
         return OPCODE_HALT;
     }
+    //JALR
+    if (strcmp(opcode_str, "JALR") == 0)
+    {
+        return OPCODE_JALR;
+    }
+    //JUMP  
+    if (strcmp(opcode_str, "JUMP") == 0)
+    {
+        return OPCODE_JUMP;
+    }
+    //RET
+    if (strcmp(opcode_str, "RET") == 0)
+    {
+        return OPCODE_RET;
+    }
     printf("%s\n", opcode_str);
     assert(0 && "Invalid opcode");
     return 0;
@@ -185,6 +200,14 @@ create_APEX_instruction(APEX_Instruction *ins, char *buffer)
             ins->rs2 = get_num_from_string(tokens[2]);
             break;
         }
+        case OPCODE_ADDL:
+        case OPCODE_SUBL:
+        {
+            ins->rd = get_num_from_string(tokens[0]);
+            ins->rs1 = get_num_from_string(tokens[1]);
+            ins->imm = get_num_from_string(tokens[2]);
+            break;
+        }
 
         case OPCODE_MOVC:
         {
@@ -211,8 +234,28 @@ create_APEX_instruction(APEX_Instruction *ins, char *buffer)
 
         case OPCODE_BZ:
         case OPCODE_BNZ:
+        case OPCODE_BP:
+        case OPCODE_BNP:
         {
             ins->imm = get_num_from_string(tokens[0]);
+            break;
+        }
+        case OPCODE_JUMP:
+        {
+            ins->rs1 = get_num_from_string(tokens[0]);
+            ins->imm = get_num_from_string(tokens[1]);
+            break;
+        }
+        case OPCODE_JALR:
+        {
+            ins->rd = get_num_from_string(tokens[0]);
+            ins->rs1 = get_num_from_string(tokens[1]);
+            ins->imm = get_num_from_string(tokens[2]);
+            break;
+        }
+        case OPCODE_RET:
+        {
+            ins->rs1 = get_num_from_string(tokens[0]);
             break;
         }
     }

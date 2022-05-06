@@ -36,6 +36,7 @@ int pop_free_physical_registers(free_physical_registers_queue *fpq){
 }
 
 void push_free_physical_registers(free_physical_registers_queue *fpq, int physical_register){
+    printf("PRF reg Freed: P[%d]\n",physical_register);
     fpq->tail=(fpq->tail+1)%PHYSICAL_REGISTERS_SIZE;
     fpq->free_physical_registers[fpq->tail]=physical_register;
     return;

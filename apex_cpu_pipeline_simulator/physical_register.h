@@ -21,11 +21,12 @@ typedef struct physical_register_content
     int reg_value;
     int zero_flag;
     int positive_flag;
+    int architectural_register;
 } physical_register_content;
 
 typedef struct  physical_register_file
 {
-    physical_register_content physical_register[PHYSICAL_REGISTERS_SIZE];
+    physical_register_content physical_register[PHYSICAL_REGISTERS_SIZE+1];
 }physical_register_file;
 
 typedef struct free_physical_registers_queue
